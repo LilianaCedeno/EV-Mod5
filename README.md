@@ -21,8 +21,8 @@ Este proyecto automatiza pruebas de inicio de sesión en una aplicación web uti
 ## 📝 Escenarios de Prueba
 
 ### Escenario de Inicio de Sesión Exitoso
+---
 
-```
 @LoginSingle
 Scenario: Inicio de sesión exitoso
   Given que el usuario abre la página de login
@@ -31,9 +31,9 @@ Scenario: Inicio de sesión exitoso
   And hace clic en el botón de iniciar sesión
   Then debería ver el mensaje "You logged into a secure area!"
 
+---
 
 Escenarios de Inicio de Sesión con Credenciales Inválidas (Scenario Outline)
-```
 
 @LoginOutline
 Scenario Outline: Intentos de inicio de sesión con diferentes credenciales
@@ -44,7 +44,7 @@ Scenario Outline: Intentos de inicio de sesión con diferentes credenciales
   Then debería ver el mensaje "<mensajeEsperado>"
 
 Examples:
-  | usuario    | password             | mensajeEsperado                |
+  | usuario    | password             | mensajeEsperado               |
   | tomsmith   | SuperSecretPassword! | You logged into a secure area!|
   | tomsmith   | incorrecta           | Your password is invalid!     |
   | usuarioX   | SuperSecretPassword! | Your username is invalid!     |
@@ -62,7 +62,9 @@ Navegador Chrome (compatible con ChromeDriver gestionado por WebDriverManager)
 
 Clonar el repositorio:
     -git clone https://github.com/LilianaCedeno/EV-Mod5.git
+
     -Entrar en el directorio del proyecto:
+    
     -cd EV-Mod5
 
 Ejecutar las pruebas con Maven:
